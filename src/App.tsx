@@ -13,8 +13,8 @@ const App: React.FC = () => {
           height: '90%',
           display: 'grid',
           padding: '20px',
-          gridTemplateColumns: 'repeat(6, 1fr)',
-          gridTemplateRows: '10% 22.5% 22.5% 22.5% 22.5%',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px,1fr))',
+          gridTemplateRows: 'repeat(auto-fit, minmax(80px,10%))',
         }}
       >
         <Vis
@@ -59,20 +59,31 @@ const App: React.FC = () => {
           subtitle="39 unit"
           indicator="good"
         />
-        <Vis style={{ gridColumn: 'span 2' }} />
+        <Vis
+          style={{
+            gridColumn: 'span 2',
+            gridRow: 'span 3',
+          }}
+        />
         <Vis
           title="Power Billing"
           subtitle="Highest in 9:00"
           indicator="normal"
           type="line"
-          style={{ gridColumn: 'span 2' }}
+          style={{
+            gridColumn: 'span 2',
+            gridRow: 'span 3',
+          }}
         />
         <Vis
           title="Power Usage by device"
           subtitle="Light cost most"
           indicator="normal"
           type="pie"
-          style={{ gridColumn: 'span 2' }}
+          style={{
+            gridColumn: 'span 2',
+            gridRow: 'span 3',
+          }}
         />
         <Vis
           type="multitpleline"
@@ -80,33 +91,24 @@ const App: React.FC = () => {
           title="Power mintor"
           subtitle="120,000 unit/ hour"
           style={{
-            gridRow: '3 / 6',
-            gridColumn: '1 / 6',
+            gridColumn: 'span 5',
+            gridRow: 'span 6',
           }}
         />
         <Vis
           type="bar"
           size="row"
-          style={{
-            gridRow: '3 / 4',
-            gridColumn: '6 / 7',
-          }}
+          style={{ gridColumn: 'span 1', gridRow: 'span 2' }}
         />
         <Vis
           type="line"
           size="row"
-          style={{
-            gridRow: '4 / 5',
-            gridColumn: '6 / 7',
-          }}
+          style={{ gridColumn: 'span 1', gridRow: 'span 2' }}
         />
         <Vis
           type="pie"
           size="row"
-          style={{
-            gridRow: '5 / 6',
-            gridColumn: '6 / 7',
-          }}
+          style={{ gridColumn: 'span 1', gridRow: 'span 2' }}
         />
       </div>
     </>
