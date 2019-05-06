@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import VisBlock from "./VisBlock"
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <VisBlock type="line" size="s" />
+      <VisBlock type="bar" size="s" />
+      <VisBlock type="line" size="s" />
+      <VisBlock type="pie" size="s" />
+      <VisBlock type="bar" />
+      <VisBlock type="line" />
+      <VisBlock type="pie" />
+      <VisBlock
+        type="line"
+        size="l"
+        title="Total power"
+        subtitle="120,000,000 unit/unit"
+      />
+      <div style={{display: "inline-block", width: "calc(20% - 40px)"}}>
+        <VisBlock type="line" size="row" />
+        <VisBlock type="line" size="row" />
+        <VisBlock type="line" size="row" />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
