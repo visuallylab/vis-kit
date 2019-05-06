@@ -1,27 +1,27 @@
-import React, {useRef, useEffect, CSSProperties} from "react"
-import echarts from "echarts"
+import React, { useRef, useEffect, CSSProperties } from 'react';
+import echarts from 'echarts';
 
 type TProps = {
   option: echarts.EChartOption;
   style?: CSSProperties;
-}
+};
 
-const Echart: React.FC<TProps> = ({option, style}) => {
-  const chart = useRef<HTMLDivElement>(null)
-  let myChart: echarts.ECharts
-
-  useEffect(() => {
-    myChart = echarts.init(chart.current!)
-    myChart.setOption(option)
-  }, [])
+const Echart: React.FC<TProps> = ({ option, style }) => {
+  const chart = useRef<HTMLDivElement>(null);
+  let myChart: echarts.ECharts;
 
   useEffect(() => {
-    const resize = () => myChart.resize()
-    window.addEventListener("resize", resize)
-    return () => window.removeEventListener("resize", resize)
-  }, [])
+    myChart = echarts.init(chart.current!);
+    myChart.setOption(option);
+  }, []);
 
-  return <div style={style} ref={chart} />
-}
+  useEffect(() => {
+    const resize = () => myChart.resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, []);
 
-export default Echart
+  return <div style={{ ...style, height: '100%' }} ref={chart} />;
+};
+
+export default Echart;
