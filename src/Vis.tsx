@@ -31,22 +31,23 @@ const Vis: React.FunctionComponent<IProps> = ({
     mode === 'chart'
       ? titleStyle[size]
       : {
-          fontSize: '12px',
+          fontSize: '10px',
           margin: 0,
-          marginTop: '12px',
+          marginTop: '4px',
         };
   const subtitleStyles =
     mode === 'chart'
       ? subtitleStyle[size]
       : {
-          fontSize: '24px',
+          fontSize: '20px',
           marginTop: '0px',
         };
   const indicatorStyles =
     mode === 'chart'
       ? indicatorStyle[size]
       : {
-          marginTop: '12px',
+          marginTop: '4px',
+          display: 'none',
         };
   let option;
 

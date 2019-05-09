@@ -13,8 +13,8 @@ const App: React.FC = () => {
           height: '90%',
           display: 'grid',
           padding: '20px',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px,1fr))',
-          gridTemplateRows: 'repeat(auto-fit, minmax(80px,10%))',
+          gridTemplateColumns: 'repeat(6, minmax(100px,1fr))',
+          gridTemplateRows: 'repeat(auto-fit, minmax(60px,10%))',
         }}
       >
         <Vis
